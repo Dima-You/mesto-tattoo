@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /cart/
+Sitemap: https://mesto-tattoostudio.ru/sitemap.xml
