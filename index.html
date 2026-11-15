@@ -113,6 +113,30 @@
             border-bottom: 1px solid var(--color-gray-dark);
         }
 
+                /* =========================================
+           H1 ПЕРВОГО ЭКРАНА: оформлен как слоган
+           ========================================= */
+        .hero-h1 {
+            font-family: var(--font-body);      /* Гротеск, как у слогана */
+            font-size: 1.2rem;                  /* Тот же кегль, что у слогана */
+            font-weight: 400;                   /* Без жирности — деликатно */
+            font-style: italic;                 /* Курсив, как у слогана */
+            text-transform: none;               /* Отключаем капс из общих правил h1 */
+            letter-spacing: 0.02em;
+            line-height: 1.5;
+            color: var(--color-gray-light);     /* Серый, как у слогана */
+            max-width: 700px;
+            margin: 0 auto 2rem;                /* Центрируем и отделяем от логотипа */
+        }
+
+        @media (max-width: 768px) {
+            .hero-h1 {
+                font-size: 1.05rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        
         /* =========================================
            2. КОМПОНЕНТЫ (КНОПКИ, ПЛЕЙСХОЛДЕРЫ)
            ========================================= */
@@ -911,17 +935,20 @@
         <!-- HERO BLOCK -->
         <section id="hero" style="display: block; height: auto; min-height: 100vh; padding: 160px 20px 80px; text-align: center;">
             <div class="container hero-content">
-                <!-- H1 теперь содержит логотип: визуально это картинка,
-                     но семантически заголовок страницы сохранён для SEO -->
-                <h1 class="hero-logo">
+                <!-- H1: главный текстовый заголовок страницы для поисковых роботов.
+                     Визуально оформлен как слоган, но семантически это H1 -->
+                <h1 class="hero-h1">Тату-студия MESTO в Коломне — мастер Дмитрий Юрасов</h1>
+
+                <!-- Логотип больше не H1 (их должен быть один) — теперь это div -->
+                <div class="hero-logo">
                     <img src="images/logo.png" alt="MESTO — тату-студия в Коломне">
-                </h1>
+                </div>
 
                 <p class="hero-slogan">«Твоя идея. Твоя история. Твоё MESTO.»</p>
                 <p class="hero-subtitle">Место, где твоя идея становится татуировкой.</p>
 
                 <div class="hero-buttons">
-                    <a href="https://t.me/Yurasov_Tattoo_Kolomna" target="_blank" class="btn btn-primary">Написать в Telegram</a>
+                    <a href="https://t.me/Yurasov_Tattoo_Kolomna" target="_blank" rel="noopener" class="btn btn-primary">Написать в Telegram</a>
                     <a href="tel:+79168864589" class="btn btn-outline">Позвонить</a>
                 </div>
             </div>
