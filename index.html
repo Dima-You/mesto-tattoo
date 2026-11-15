@@ -866,6 +866,15 @@
             from { opacity: 0; transform: translateY(-6px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+
+          /* Левая группа футера: логотип и « MESTO» прижаты к левому краю */
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 24px;   /* Расстояние между логотипом и пунктом.
+                            Хотите плотнее — поставьте 16px или 12px */
+        }
+
         
     </style>
 </head>
@@ -1136,7 +1145,7 @@
                     <span>TATTOO STUDIO</span>
                 </div>
                 <button class="footer-geo-toggle" id="geoToggle" type="button"
-                        aria-expanded="false" aria-controls="seoGeo">Про MESTO</button>
+                        aria-expanded="false" aria-controls="seoGeo"> MESTO</button>
             </div>
 
             <nav class="footer-nav">
@@ -1151,7 +1160,7 @@
             </div>
         </div>
 
-        <!-- ГЕО-ТЕКСТ: раскрывается по клику на «Про MESTO» -->
+        <!-- ГЕО-ТЕКСТ: раскрывается по клику на « MESTO» -->
         <div class="container">
             <div class="seo-geo" id="seoGeo" hidden>
                 <p>Тату-студия MESTO — это место, где рождаются ваши идеи. Мы находимся в городе Коломна, Московская область, по адресу ул. Октябрьской Революции, 366/2. К нам приезжают клиенты из Коломны, а также из Москвы и других городов Подмосковья.</p>
