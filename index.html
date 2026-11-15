@@ -802,6 +802,45 @@
             color: var(--color-gray-light);
         }
 
+/* =========================================
+           ГЕО-ТЕКСТ (SEO-БЛОК В ПОДВАЛЕ)
+           ========================================= */
+        .seo-geo {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--color-gray-light);
+        }
+
+        .seo-geo summary {
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: color 0.3s ease;
+            list-style: none;          /* Убираем стандартный треугольник */
+        }
+
+        .seo-geo summary::-webkit-details-marker { display: none; }
+
+        .seo-geo summary::before {
+            content: '+ ';               /* Монохромный маркер в стиле сайта */
+        }
+
+        .seo-geo[open] summary::before {
+            content: '− ';
+        }
+
+        .seo-geo summary:hover {
+            color: var(--color-text);
+        }
+
+        .seo-geo p {
+            margin: 12px 0 0;
+            max-width: 800px;
+            line-height: 1.7;
+        }
+        
     </style>
 </head>
 <body>
@@ -1068,6 +1107,14 @@
                 MESTO
                 <span>TATTOO STUDIO</span>
             </div>
+
+            <!-- ГЕО-ТЕКСТ для локального SEO (свернутый блок) -->
+        <div class="container">
+            <details class="seo-geo">
+                <summary>О студии MESTO в Коломне</summary>
+                <p>Тату-студия MESTO — это место, где рождаются ваши идеи. Мы находимся в городе Коломна, Московская область, по адресу ул. Октябрьской Революции, 366/2. К нам приезжают клиенты из Коломны, а также из Москвы и других городов Подмосковья.</p>
+            </details>
+        </div>
             
             <nav class="footer-nav">
                 <a href="#portfolio">Портфолио</a>
