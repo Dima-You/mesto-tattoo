@@ -1108,15 +1108,10 @@
                 <span>TATTOO STUDIO</span>
             </div>
 
-            <!-- ГЕО-ТЕКСТ для локального SEO (свернутый блок) -->
-        <div class="container">
-            <details class="seo-geo">
-                <summary>О студии MESTO в Коломне</summary>
-                <p>Тату-студия MESTO — это место, где рождаются ваши идеи. Мы находимся в городе Коломна, Московская область, по адресу ул. Октябрьской Революции, 366/2. К нам приезжают клиенты из Коломны, а также из Москвы и других городов Подмосковья.</p>
-            </details>
-        </div>
-            
             <nav class="footer-nav">
+                <!-- Пункт меню, раскрывающий гео-текст -->
+                <button class="footer-geo-toggle" id="geoToggle" type="button"
+                        aria-expanded="false" aria-controls="seoGeo">Про MESTO</button>
                 <a href="#portfolio">Портфолио</a>
                 <a href="#master">Мастер</a>
                 <a href="#how-to-book">Запись</a>
@@ -1125,6 +1120,13 @@
 
             <div>
                 &copy; 2026 MESTO Tattoo Studio. Все права защищены.
+            </div>
+        </div>
+
+        <!-- ГЕО-ТЕКСТ: раскрывается по клику на «Про MESTO» -->
+        <div class="container">
+            <div class="seo-geo" id="seoGeo" hidden>
+                <p>Тату-студия MESTO — это место, где рождаются ваши идеи. Мы находимся в городе Коломна, Московская область, по адресу ул. Октябрьской Революции, 366/2. К нам приезжают клиенты из Коломны, а также из Москвы и других городов Подмосковья.</p>
             </div>
         </div>
     </footer>
