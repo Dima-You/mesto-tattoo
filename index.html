@@ -803,42 +803,46 @@
         }
 
 /* =========================================
-           ГЕО-ТЕКСТ (SEO-БЛОК В ПОДВАЛЕ)
+           ПУНКТ МЕНЮ «ПРО MESTO» И ГЕО-ТЕКСТ
            ========================================= */
-        .seo-geo {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: var(--color-gray-light);
-        }
-
-        .seo-geo summary {
+        /* Кнопка выглядит как обычная ссылка меню футера */
+        .footer-geo-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font: inherit;              /* Наследует шрифт и размер футера */
+            color: inherit;             /* Серый, как остальные пункты */
             cursor: pointer;
-            font-family: var(--font-heading);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
             transition: color 0.3s ease;
-            list-style: none;          /* Убираем стандартный треугольник */
         }
 
-        .seo-geo summary::-webkit-details-marker { display: none; }
-
-        .seo-geo summary::before {
-            content: '+ ';               /* Монохромный маркер в стиле сайта */
+        .footer-geo-toggle:hover {
+            color: var(--color-text);   /* Тот же hover, что у ссылок меню */
         }
 
-        .seo-geo[open] summary::before {
+        /* Монохромный маркер + / − */
+        .footer-geo-toggle::before {
+            content: '+ ';
+        }
+        .footer-geo-toggle[aria-expanded="true"]::before {
             content: '− ';
         }
 
-        .seo-geo summary:hover {
-            color: var(--color-text);
+        /* Раскрывающийся абзац под футером */
+        .seo-geo p {
+            margin: 0;
+            padding: 5px 0 25px;
+            max-width: 800px;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--color-gray-light);
+            animation: geoFadeIn 0.35s ease;
         }
 
-        .seo-geo p {
-            margin: 12px 0 0;
-            max-width: 800px;
-            line-height: 1.7;
+        @keyframes geoFadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to   { opacity: 1; transform: translateY(0); }
         }
         
     </style>
@@ -1111,7 +1115,7 @@
             <nav class="footer-nav">
                 <!-- Пункт меню, раскрывающий гео-текст -->
                 <button class="footer-geo-toggle" id="geoToggle" type="button"
-                        aria-expanded="false" aria-controls="seoGeo">Про MESTO</button>
+                        aria-expanded="false" aria-controls="seoGeo">MESTO</button>
                 <a href="#portfolio">Портфолио</a>
                 <a href="#master">Мастер</a>
                 <a href="#how-to-book">Запись</a>
@@ -1234,7 +1238,17 @@
                 }
            });
             });
+    // 5. Пункт меню «Про MESTO»: раскрытие гео-текста в футере
+            const geoToggle = document.getElementById('geoToggle');
+            const seoGeo = document.getElementById('seoGeo');
 
+            if (geoToggle && seoGeo) {
+                geoToggle.addEventListener('click', () => {
+                    const isOpen = !seoGeo.hidden;
+                    seoGeo.hidden = isOpen;
+                    geoToggle.setAttribute('aria-expanded', String(!isOpen));
+                });
+            }
 
     </script>
   <!-- ЛАЙТБОКС: полноэкранный просмотр фото студии -->
