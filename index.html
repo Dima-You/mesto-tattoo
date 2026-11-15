@@ -1126,18 +1126,20 @@
         </section>
     </main>
 
-    <!-- ФУТЕР -->
+        <!-- ФУТЕР -->
     <footer>
         <div class="container footer-inner">
-            <div class="logo">
-                MESTO
-                <span>TATTOO STUDIO</span>
+            <!-- Левая группа: логотип + пункт «Про MESTO» у левого края -->
+            <div class="footer-left">
+                <div class="logo">
+                    MESTO
+                    <span>TATTOO STUDIO</span>
+                </div>
+                <button class="footer-geo-toggle" id="geoToggle" type="button"
+                        aria-expanded="false" aria-controls="seoGeo">Про MESTO</button>
             </div>
 
             <nav class="footer-nav">
-                <!-- Пункт меню, раскрывающий гео-текст -->
-                <button class="footer-geo-toggle" id="geoToggle" type="button"
-                        aria-expanded="false" aria-controls="seoGeo">MESTO</button>
                 <a href="#portfolio">Портфолио</a>
                 <a href="#master">Мастер</a>
                 <a href="#how-to-book">Запись</a>
